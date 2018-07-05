@@ -22,7 +22,6 @@
 		E214A96E20E6726C00E9A7CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E214A97120E6726C00E9A7CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E214A97320E6726C00E9A7CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E284680A20EBB28600955176 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +57,6 @@
 			children = (
 				E214A96720E6726A00E9A7CB /* AppDelegate.swift */,
 				E214A96920E6726A00E9A7CB /* ViewController.swift */,
-				E284680A20EBB28600955176 /* PrefixHeader.pch */,
 				E214A96B20E6726A00E9A7CB /* Main.storyboard */,
 				E214A96E20E6726C00E9A7CB /* Assets.xcassets */,
 				E214A97020E6726C00E9A7CB /* LaunchScreen.storyboard */,
