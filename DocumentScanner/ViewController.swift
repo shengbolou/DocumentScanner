@@ -12,24 +12,18 @@ import CoreImage
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     @IBOutlet var imageview: UIImageView!
-    
     @IBOutlet var saveBtn: UIButton!
+    
     var imagePicker:UIImagePickerController!
-    
     var rawImg:UIImage!
-    
     var crop:Bool! = false
-    
     let ciContext =  CIContext()
-    
     var docImage:CIImage!
-    
     var resRect:CIRectangleFeature!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.saveBtn.isEnabled = false
-        
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         imageview.isUserInteractionEnabled = true
