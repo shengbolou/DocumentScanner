@@ -7,14 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F0B6E27B72034A43A04D22E /* Pods_DocumentScanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A77F539C12853BB76E42B0A /* Pods_DocumentScanner.framework */; };
 		E214A96820E6726A00E9A7CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E214A96720E6726A00E9A7CB /* AppDelegate.swift */; };
 		E214A96A20E6726A00E9A7CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E214A96920E6726A00E9A7CB /* ViewController.swift */; };
 		E214A96D20E6726A00E9A7CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E214A96B20E6726A00E9A7CB /* Main.storyboard */; };
 		E214A96F20E6726C00E9A7CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E214A96E20E6726C00E9A7CB /* Assets.xcassets */; };
 		E214A97220E6726C00E9A7CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E214A97020E6726C00E9A7CB /* LaunchScreen.storyboard */; };
+		E2FD359720F4030500B1CEDC /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2FD359620F4030500B1CEDC /* TesseractOCR.framework */; };
+		E2FD359920F4031C00B1CEDC /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E2FD359820F4031C00B1CEDC /* libstdc++.tbd */; };
+		E2FD359B20F4032700B1CEDC /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2FD359A20F4032700B1CEDC /* CoreImage.framework */; };
+		E2FD359D20F4035500B1CEDC /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = E2FD359C20F4035500B1CEDC /* tessdata */; };
+		E2FD35D320F4F42500B1CEDC /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FD35D220F4F42500B1CEDC /* ContentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2765DD847A9D64BF7764B762 /* Pods-DocumentScanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentScanner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentScanner/Pods-DocumentScanner.debug.xcconfig"; sourceTree = "<group>"; };
+		2A77F539C12853BB76E42B0A /* Pods_DocumentScanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocumentScanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E214A96420E6726A00E9A7CB /* DocumentScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DocumentScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E214A96720E6726A00E9A7CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E214A96920E6726A00E9A7CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +30,12 @@
 		E214A96E20E6726C00E9A7CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E214A97120E6726C00E9A7CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E214A97320E6726C00E9A7CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2FD359620F4030500B1CEDC /* TesseractOCR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TesseractOCR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2FD359820F4031C00B1CEDC /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		E2FD359A20F4032700B1CEDC /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		E2FD359C20F4035500B1CEDC /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tessdata; path = ../../../../Downloads/OCR_Tutorial_Resources/tessdata; sourceTree = "<group>"; };
+		E2FD35D220F4F42500B1CEDC /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		E469746479E2D1378A4C3BDB /* Pods-DocumentScanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentScanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentScanner/Pods-DocumentScanner.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,18 +43,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2FD359B20F4032700B1CEDC /* CoreImage.framework in Frameworks */,
+				E2FD359920F4031C00B1CEDC /* libstdc++.tbd in Frameworks */,
+				E2FD359720F4030500B1CEDC /* TesseractOCR.framework in Frameworks */,
+				9F0B6E27B72034A43A04D22E /* Pods_DocumentScanner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		672B8E1C27718EC119433DD0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2765DD847A9D64BF7764B762 /* Pods-DocumentScanner.debug.xcconfig */,
+				E469746479E2D1378A4C3BDB /* Pods-DocumentScanner.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E214A95B20E6726A00E9A7CB = {
 			isa = PBXGroup;
 			children = (
 				E214A96620E6726A00E9A7CB /* DocumentScanner */,
 				E214A96520E6726A00E9A7CB /* Products */,
 				E284680320EBB12200955176 /* Frameworks */,
+				672B8E1C27718EC119433DD0 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,9 +83,11 @@
 		E214A96620E6726A00E9A7CB /* DocumentScanner */ = {
 			isa = PBXGroup;
 			children = (
+				E2FD359C20F4035500B1CEDC /* tessdata */,
 				E214A96720E6726A00E9A7CB /* AppDelegate.swift */,
 				E214A96920E6726A00E9A7CB /* ViewController.swift */,
 				E214A96B20E6726A00E9A7CB /* Main.storyboard */,
+				E2FD35D220F4F42500B1CEDC /* ContentViewController.swift */,
 				E214A96E20E6726C00E9A7CB /* Assets.xcassets */,
 				E214A97020E6726C00E9A7CB /* LaunchScreen.storyboard */,
 				E214A97320E6726C00E9A7CB /* Info.plist */,
@@ -68,6 +98,10 @@
 		E284680320EBB12200955176 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E2FD359A20F4032700B1CEDC /* CoreImage.framework */,
+				E2FD359820F4031C00B1CEDC /* libstdc++.tbd */,
+				E2FD359620F4030500B1CEDC /* TesseractOCR.framework */,
+				2A77F539C12853BB76E42B0A /* Pods_DocumentScanner.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -79,9 +113,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E214A97620E6726C00E9A7CB /* Build configuration list for PBXNativeTarget "DocumentScanner" */;
 			buildPhases = (
+				5D629923A5237A171DD8DCBE /* [CP] Check Pods Manifest.lock */,
 				E214A96020E6726A00E9A7CB /* Sources */,
 				E214A96120E6726A00E9A7CB /* Frameworks */,
 				E214A96220E6726A00E9A7CB /* Resources */,
+				C8C915C849E7F49BBD7D57CF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E214A97220E6726C00E9A7CB /* LaunchScreen.storyboard in Resources */,
+				E2FD359D20F4035500B1CEDC /* tessdata in Resources */,
 				E214A96F20E6726C00E9A7CB /* Assets.xcassets in Resources */,
 				E214A96D20E6726A00E9A7CB /* Main.storyboard in Resources */,
 			);
@@ -139,12 +176,52 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5D629923A5237A171DD8DCBE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DocumentScanner-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8C915C849E7F49BBD7D57CF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DocumentScanner/Pods-DocumentScanner-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/TesseractOCRiOS/TesseractOCR.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TesseractOCR.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DocumentScanner/Pods-DocumentScanner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E214A96020E6726A00E9A7CB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E214A96A20E6726A00E9A7CB /* ViewController.swift in Sources */,
+				E2FD35D320F4F42500B1CEDC /* ContentViewController.swift in Sources */,
 				E214A96820E6726A00E9A7CB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,12 +364,17 @@
 		};
 		E214A97720E6726C00E9A7CB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2765DD847A9D64BF7764B762 /* Pods-DocumentScanner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GBYP8HWTBS;
-				FRAMEWORK_SEARCH_PATHS = "/Users/Shengbo.Lou@ibm.com/Downloads";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"/Users/Shengbo.Lou@ibm.com/Downloads",
+					"$(inherited)",
+				);
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = DocumentScanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -310,12 +392,17 @@
 		};
 		E214A97820E6726C00E9A7CB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E469746479E2D1378A4C3BDB /* Pods-DocumentScanner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GBYP8HWTBS;
-				FRAMEWORK_SEARCH_PATHS = "/Users/Shengbo.Lou@ibm.com/Downloads";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"/Users/Shengbo.Lou@ibm.com/Downloads",
+					"$(inherited)",
+				);
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = DocumentScanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreImage
+import TesseractOCR
 
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
@@ -20,6 +21,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     let ciContext =  CIContext()
     var docImage:CIImage!
     var resRect:CIRectangleFeature!
+    var croppedImg:CIImage!
+    var resultString:String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +41,16 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     
     @IBAction func savePressed(_ sender:UIButton) {
-        UIImageWriteToSavedPhotosAlbum(self.imageview.image!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+        if let tesseract = G8Tesseract(language: "eng") {
+            tesseract.engineMode = .tesseractCubeCombined
+            tesseract.pageSegmentationMode = .auto
+            tesseract.image = self.imageview.image
+            tesseract.recognize()
+            resultString = String(tesseract.recognizedText)
+            print(resultString)
+            self.performSegue(withIdentifier: "OCR", sender: nil)
+        }
+//        UIImageWriteToSavedPhotosAlbum(self.imageview.image!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
     
     @objc func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeRawPointer) {
@@ -107,6 +119,13 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationNavigationController = segue.destination as? UINavigationController{
+            let contentViewController = destinationNavigationController.topViewController as! ContentViewController
+            contentViewController.text = resultString
+        }
+    }
+    
     
     private func presentAlert(title:String, message:String, handler:((UIAlertAction)->Void)?) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -131,6 +150,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
 
         var outputImage = perspectiveCorrection.outputImage
         outputImage = outputImage?.oriented(self.CGImagePropertyOrientationForUIImageOrientation(uiOrientation: rawImg.imageOrientation))
+        croppedImg = outputImage
         let filter = CIFilter(name: "CIColorControls")
         filter?.setValue(outputImage, forKey: kCIInputImageKey)
         filter?.setValue(5.3, forKey: kCIInputContrastKey)
@@ -160,6 +180,37 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             return CGImagePropertyOrientation.leftMirrored
         case UIImageOrientation.rightMirrored:
             return CGImagePropertyOrientation.rightMirrored
+        }
+    }
+    
+    private func OCR() {
+        let context = CIContext()
+
+        guard let detector = CIDetector(ofType: CIDetectorTypeText,
+                                        context: context,
+                                        options: [CIDetectorAccuracy: CIDetectorAccuracyHigh]) else {
+                                            return
+        }
+
+        guard let rects:[CITextFeature] = detector.features(in: croppedImg, options:[CIDetectorImageOrientation: 8]) as? [CITextFeature] else {
+            return
+        }
+
+        print(rects.count)
+
+        for rect in rects{
+            var textArea:CIImage = croppedImg.cropped(to: rect.bounds)
+            textArea = textArea.oriented(self.CGImagePropertyOrientationForUIImageOrientation(uiOrientation: rawImg.imageOrientation))
+            let cgimg = context.createCGImage(textArea, from: textArea.extent)
+            let uiImg = UIImage(cgImage: cgimg!)
+            if let tesseract = G8Tesseract(language: "eng") {
+                tesseract.engineMode = .tesseractCubeCombined
+                tesseract.pageSegmentationMode = .auto
+                tesseract.image = uiImg.g8_blackAndWhite()
+                tesseract.recognize()
+                print(tesseract.recognizedText)
+            }
+            break
         }
     }
     

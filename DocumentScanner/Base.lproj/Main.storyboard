@@ -29,7 +29,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Jc-Z2-ZQC">
                                                 <rect key="frame" x="0.0" y="0.0" width="195" height="70"/>
-                                                <state key="normal" title="Save"/>
+                                                <state key="normal" title="Text"/>
                                                 <connections>
                                                     <action selector="savePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SaM-ne-i35"/>
                                                 </connections>
@@ -67,11 +67,54 @@
                     <connections>
                         <outlet property="imageview" destination="yJi-Zj-LH6" id="Ai1-x1-6Nh"/>
                         <outlet property="saveBtn" destination="6Jc-Z2-ZQC" id="vCU-ss-XHn"/>
+                        <segue destination="T6f-JK-uQb" kind="show" identifier="OCR" id="mcV-2Z-WNz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="130.88455772113943"/>
+            <point key="canvasLocation" x="-730" y="181"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jX6-Hf-i44">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="awp-O8-Q96" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="T6f-JK-uQb" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Yg1-fo-NCc">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="rhO-Zm-DGQ" kind="relationship" relationship="rootViewController" id="tX3-BJ-98u"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="110" y="177"/>
+        </scene>
+        <!--Content-->
+        <scene sceneID="ZMZ-fr-cqZ">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Soi-Ms-ee8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="rhO-Zm-DGQ" customClass="ContentViewController" customModule="DocumentScanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <textView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="fyV-XF-ObZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <navigationItem key="navigationItem" title="Content" id="Eb4-Xy-v38">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="IBa-Ql-9cB">
+                            <connections>
+                                <action selector="donePressed:" destination="rhO-Zm-DGQ" id="dwl-Sj-5W4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="contentText" destination="fyV-XF-ObZ" id="QQr-we-d8m"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1033" y="177"/>
         </scene>
     </scenes>
 </document>
